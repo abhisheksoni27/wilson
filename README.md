@@ -1,6 +1,32 @@
 # wilson
 **wilson** - quickly write tests for APIs using JSON configs
 
+If you want to quickly write tests for your APIs and, then `wilson` is the tool for you.
+
+Defining what your APIs do on different inputs shouldn't be that hard. All it takes is some info about the parameters, or request body, and what to expect in the response (along with data types).
+
+Here's an example `wilson` config for the `https://www.thecolorapi.com/id?hex=24B1E0`
+
+```
+[
+  {
+    "url": "https://www.thecolorapi.com/id",
+    "type_of_request": "get",
+    "expected_status_code": 200,
+    "request_params": {
+      "hex": "00ff00"
+    },
+    "expected_response": {
+      "hex": {
+        "value": "String",
+        "clean": "String"
+      }
+    }
+  }
+]
+
+```
+
 # Installation
 
 ```
